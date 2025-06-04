@@ -11,6 +11,30 @@
       color: #1a1a1a;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background: #2f7b59;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
     }
     header {
       background-color: #bde0c0;
@@ -36,32 +60,157 @@
       padding: 1rem;
       background: #e7f6e2;
     }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "• ";
+      color: #2f7b59;
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: #ffffff;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background-color: #bde0c0;
+    }
+    .bar {
+      height: 20px;
+      background-color: #2f7b59;
+      margin: 5px 0;
+    }
+    .scenario {
+      background: #fffbe6;
+      border: 1px solid #e0d6a4;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#objectif">Objectif</a></li>
+      <li><a href="#definition">Définition</a></li>
+      <li><a href="#methode">Méthode</a></li>
+      <li><a href="#resultats">Résultats</a></li>
+      <li><a href="#leviers">Leviers</a></li>
+      <li><a href="#scenarios">Scénarios</a></li>
+      <li><a href="#contribution">Contribution</a></li>
+      <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Bilan Carbone Prospectif</h1>
-    <p>Une démarche engagée dès la conception de <strong>Tropicalia</strong></p>
+    <p>Étude préalable à la construction du projet <strong>Tropicalia</strong></p>
   </header>
 
-  <div class="section">
-    <h2>Objectif</h2>
-    <p>Évaluer les émissions de gaz à effet de serre générées par le projet Tropicalia, dès sa phase de conception, afin de guider les choix techniques et opérationnels dans une logique de réduction de l'empreinte carbone.</p>
+  <div class="section" id="objectif">
+    <h2>Pourquoi un Bilan Carbone avant projet ?</h2>
+    <p>Le Bilan Carbone réalisé en phase amont du projet Tropicalia permet d’anticiper les émissions de gaz à effet de serre (GES) induites par la construction et l’exploitation du site. Il s'agit d'un outil d'aide à la décision dès la phase de conception pour orienter les choix techniques, énergétiques et logistiques en faveur d’une stratégie bas-carbone. C’est une démarche encore rare pour des projets à ce stade de développement.</p>
   </div>
 
-  <div class="section">
-    <h2>Résultats clés</h2>
+  <div class="section" id="definition">
+    <h2>Qu’est-ce qu’un Bilan Carbone ?</h2>
+    <p>Un Bilan Carbone vise à quantifier les émissions de GES générées par une activité ou un projet. Il prend en compte différents scopes (1 : émissions directes, 2 : émissions liées à l'énergie, 3 : émissions indirectes) selon les standards internationaux :</p>
     <ul>
-      <li><span class="highlight">4 504 tCO₂e</span> émises en phase construction (immobilisations, matériaux, fret...)</li>
-      <li><span class="highlight">1 119 tCO₂e</span> par an estimées en phase exploitation</li>
-      <li><span class="highlight">-15 %</span> d'émissions possibles grâce à une alimentation végétarienne proposée sur site</li>
-      <li>Intégration des scopes <span class="highlight">1, 2 et 3</span> : énergie, intrants, déplacements visiteurs & salariés</li>
+      <li><strong>Base Carbone® ADEME</strong></li>
+      <li><strong>GHG Protocol</strong></li>
+      <li><strong>ISO 14064</strong></li>
+    </ul>
+    <p>Le calcul repose sur la formule : <em>Émissions = Données d’activité × Facteur d’émission</em>. Les facteurs sont issus de bases de données reconnues (ADEME, Ecoinvent, DEFRA, etc.).</p>
+  </div>
+
+  <div class="section" id="methode">
+    <h2>Notre méthode</h2>
+    <p>L’étude inclut :</p>
+    <ul>
+      <li>Les <strong>immobilisations</strong> (travaux, matériaux de construction)</li>
+      <li>Les <strong>intrants</strong> (alimentation, fournitures)</li>
+      <li>Le <strong>fret</strong> (livraisons de marchandises, fournisseurs)</li>
+      <li>Les <strong>déplacements</strong> (visiteurs, salariés)</li>
+      <li>L’<strong>énergie</strong> (chaleur, électricité consommées sur site)</li>
+    </ul>
+    <p><strong>Hypothèses de calcul :</strong></p>
+    <ul>
+      <li>Base Carbone® v22.0</li>
+      <li>Année de référence : 2022</li>
+      <li>Modélisation de 500 000 visiteurs annuels</li>
+      <li>Facteurs d'émission spécifiques par mode de transport</li>
     </ul>
   </div>
 
-  <div class="section">
+  <div class="section" id="resultats">
+    <h2>Résultats Clés</h2>
+    <p><strong>Phase construction :</strong></p>
+    <table>
+      <tr><th>Poste</th><th>Émissions (tCO₂e)</th></tr>
+      <tr><td>Immobilisations</td><td>2 881</td></tr>
+      <tr><td>Intrants</td><td>826</td></tr>
+      <tr><td>Fret</td><td>248</td></tr>
+      <tr><td>Déplacements</td><td>339</td></tr>
+      <tr><td>Énergie</td><td>209</td></tr>
+      <tr><th>Total</th><th>4 504</th></tr>
+    </table>
+
+    <p><strong>Phase exploitation annuelle :</strong></p>
+    <table>
+      <tr><th>Poste</th><th>Émissions (tCO₂e/an)</th></tr>
+      <tr><td>Intrants</td><td>691</td></tr>
+      <tr><td>Déplacements visiteurs</td><td>276</td></tr>
+      <tr><td>Déplacements salariés</td><td>80</td></tr>
+      <tr><td>Énergie</td><td>72</td></tr>
+      <tr><th>Total</th><th>1 119</th></tr>
+    </table>
+  </div>
+
+  <div class="section" id="leviers">
     <h2>Leviers de réduction</h2>
-    <p>Production solaire, récupération de chaleur, choix de matériaux bas carbone, scénarios logistiques optimisés… Tropicalia anticipe ses impacts pour construire une infrastructure plus responsable.</p>
+    <ul>
+      <li>Valorisation de <strong>420 MWh/an</strong> d’énergie solaire produite</li>
+      <li>Utilisation de la <strong>chaleur fatale</strong> pour le chauffage de la serre</li>
+      <li>Optimisation des flux logistiques</li>
+      <li>Choix d’intrants bas carbone et circuits courts</li>
+    </ul>
+  </div>
+
+  <div class="section" id="scenarios">
+    <h2>Scénarios prospectifs</h2>
+    <div class="scenario">
+      <h3>Scénario alimentaire végétarien</h3>
+      <p>Ce scénario propose de substituer l’offre alimentaire carnée par une offre végétarienne au sein du site. Il permet une réduction des émissions associées aux intrants alimentaires visiteurs de l’ordre de <strong>15 %</strong>.</p>
+    </div>
+    <div class="scenario">
+      <h3>Stockage carbone végétal</h3>
+      <p>La serre tropicale permet une forme de compensation via le stockage dans la biomasse plantée. Les estimations de stockage net sont prises en compte dans la stratégie globale.</p>
+    </div>
+  </div>
+
+  <div class="section" id="contribution">
+    <h2>Contribution Positive</h2>
+    <ul>
+      <li>Stockage carbone dans les végétaux plantés</li>
+      <li>Effet démonstrateur pour le grand public</li>
+      <li>Émissions évitées par production locale d’énergie</li>
+    </ul>
+  </div>
+
+  <div class="section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>La réalisation d’un Bilan Carbone complet en phase projet est une innovation stratégique pour Tropicalia. Il permet d’anticiper les impacts, de piloter les choix techniques dès la conception, et d’orienter le projet vers un modèle exemplaire sur le plan environnemental. Cette étude ouvre la voie à une gestion durable et responsable de l’empreinte carbone dans les grands projets d’infrastructure touristique.</p>
   </div>
 
   <footer>
